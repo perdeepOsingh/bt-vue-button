@@ -1,18 +1,3 @@
-<template>
-    <div>
-        <button
-        :name="btnName" 
-        :id="btnId" 
-        :class="btnClass" 
-        :value="btnValue"
-        :disabled="btnDisabled || actionInProgress" 
-        @click="clickAction">
-            <span v-if="actionInProgress" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-            {{btnValue}}
-        </button>
-    </div>
-</template>
-
 <script>
 export default {
     name: 'bt-vue-button',
@@ -74,3 +59,17 @@ export default {
     },
 }
 </script>
+<template>
+    <div>
+        <button
+        :name="btnName" 
+        :id="btnId" 
+        :class="btnClass" 
+        :value="btnValue"
+        :disabled="btnDisabled || actionInProgress" 
+        @click="clickAction">
+            <span v-if="actionInProgress" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{btnValue}}
+        </button>
+    </div>
+</template>
