@@ -1,4 +1,5 @@
 <script>
+import 'bootstrap/dist/css/bootstrap.css'
 export default {
     name: 'bt-vue-button',
     props: {
