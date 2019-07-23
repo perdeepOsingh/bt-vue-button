@@ -1,7 +1,7 @@
 {
   "name": "bt-vue-button",
   "version": "1.0.7",
-  "description": "testing correct build",
+  "description": "VueJS button plugin for bootstrap framework to show action in progress and avoid double click.",
   "main": "dist/bt-vue-button.umd.min.js",
   "files": [
     "dist/*.js"
@@ -11,6 +11,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Perdeep Singh",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perdeepOsingh/bt-vue-button"
+  },
+  "bugs": {
+    "url": "https://github.com/perdeepOsingh/bt-vue-button/issues"
+  },
+  "homepage": "https://github.com/perdeepOsingh/bt-vue-button#readme"
 }
