@@ -1,0 +1,16 @@
+{
+  "name": "bt-vue-button",
+  "version": "1.0.7",
+  "description": "testing correct build",
+  "main": "dist/bt-vue-button.umd.min.js",
+  "files": [
+    "dist/*.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
