@@ -1,10 +1,12 @@
 # Installation
-`npm i bt-vue-button --save`
+```shell
+npm i bt-vue-button --save
+```
 
 # Getting Started
 ## Import component Globally
 Inside main.js
-```
+```javascript
 import Vue from 'vue'
 import App from './App.vue'
 import btVueButton from 'bt-vue-button'
@@ -18,12 +20,14 @@ new Vue({
 
 Inside your component
 
-`<btVueButtonTest></btVueButtonTest>`
+```html
+<btVueButtonTest></btVueButtonTest>
+```
 
 ## Import component inside individual component
 Inside HelloWorld.vue
 
-```
+```html
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -53,6 +57,7 @@ export default {
 - **btnValue:** Sets value (*String*) from button, default value is `Submit`.
 - **btnDisabled:** Sets button as disabled (*Boolean*), default value is `false`.
 - **btnFinalState:** Sets final state (*String*) of button after button is pressed, default value is `null`. Allowed values are `success, failure or ''`
+- **actionInProgress:** Sets if currently an action is in progress or not, default value is `false`.
 
 # Events
 `clicked` event is emitted to each time button is pressed.

@@ -1,18 +1,3 @@
-<template>
-    <div>
-        <button
-        :name="btnName" 
-        :id="btnId" 
-        :class="btnClass" 
-        :value="btnValue"
-        :disabled="btnDisabled || actionInProgress" 
-        @click="clickAction">
-            <span v-if="actionInProgress" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-            {{btnValue}}
-        </button>
-    </div>
-</template>
-
 <script>
 export default {
     name: 'bt-vue-button',
@@ -44,11 +29,10 @@ export default {
                 // The value must match one of these strings
                 return ['success', 'failure', ''].indexOf(value) !== -1
             }
-        }
-    },
-    data() {
-        return {
-            actionInProgress: false
+        },
+        actionInProgress: {
+            type: Boolean,
+            default: false
         }
     },
     watch: {
@@ -57,7 +41,7 @@ export default {
             if(finalStateClass){
                 this.$el.querySelector('button').classList.add(finalStateClass)
                 setTimeout(() => {
-                    this.actionInProgress = false
+                    this.updateActionInProgress(false)
                     this.$el.querySelector('button').classList.remove(finalStateClass)
                 }, 2000);
             }
@@ -65,12 +49,25 @@ export default {
     },
     methods: {
         clickAction() {
-            this.actionInProgress = true
+            this.updateActionInProgress(true)
             this.$emit('clicked')
-            setTimeout(() => {
-                    this.actionInProgress = false
-                }, 2000);
+        },
+        updateActionInProgress (status) {
+            this.actionInProgress = status
+            this.$emit('update:actionInProgress', this.actionInProgress)
         }
     },
 }
 </script>
+<template>
+        <button
+        :name="btnName" 
+        :id="btnId" 
+        :class="btnClass" 
+        :value="btnValue"
+        :disabled="btnDisabled || actionInProgress" 
+        @click="clickAction">
+            <span v-if="actionInProgress" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{btnValue}}
+        </button>
+</template>
