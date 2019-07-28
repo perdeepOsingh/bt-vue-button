@@ -35,16 +35,30 @@ export default {
             default: false
         }
     },
+    data() {
+        return {
+            name: this.btnName,
+            id: this.btnId,
+            classes: this.btnClass,
+            value: this.btnValue,
+            disabled: this.btnDisabled,
+            finalState: this.btnFinalState,
+            inProgress: this.actionInProgress
+        }
+    },
     watch: {
         btnFinalState(newValue) {
             const finalStateClass = newValue && newValue.toLowerCase() === 'success' ? 'btn-success' : newValue && newValue.toLowerCase() === 'failure' ? 'btn-warning' : null
             if(finalStateClass){
-                this.$el.querySelector('button').classList.add(finalStateClass)
+                this.$refs.btVueButton.classList.add(finalStateClass)
                 setTimeout(() => {
                     this.updateActionInProgress(false)
-                    this.$el.querySelector('button').classList.remove(finalStateClass)
+                    this.$refs.btVueButton.classList.remove(finalStateClass)
                 }, 2000);
             }
+        },
+        actionInProgress() {
+            this.inProgress = this.actionInProgress
         }
     },
     methods: {
@@ -53,21 +67,24 @@ export default {
             this.$emit('clicked')
         },
         updateActionInProgress (status) {
-            this.actionInProgress = status
-            this.$emit('update:actionInProgress', this.actionInProgress)
+            this.inProgress = status
+            this.$emit('update:actionInProgress', this.inProgress)
         }
     },
 }
 </script>
 <template>
         <button
-        :name="btnName" 
-        :id="btnId" 
-        :class="btnClass" 
-        :value="btnValue"
-        :disabled="btnDisabled || actionInProgress" 
+        ref="btVueButton"
+        :name="name" 
+        :id="id" 
+        :class="classes" 
+        :value="value"
+        :disabled="disabled || inProgress" 
         @click="clickAction">
-            <span v-if="actionInProgress" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-            {{btnValue}}
+            <slot name='inProgress' v-if="inProgress">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">Original Slot</span>
+            </slot>
+            {{value}}
         </button>
 </template>
