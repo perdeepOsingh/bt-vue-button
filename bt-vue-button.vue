@@ -51,8 +51,8 @@ export default {
             const finalStateClass = newValue && newValue.toLowerCase() === 'success' ? 'btn-success' : newValue && newValue.toLowerCase() === 'failure' ? 'btn-warning' : null
             if(finalStateClass){
                 this.$refs.btVueButton.classList.add(finalStateClass)
+                this.updateActionInProgress(false)
                 setTimeout(() => {
-                    this.updateActionInProgress(false)
                     this.$refs.btVueButton.classList.remove(finalStateClass)
                 }, 2000);
             }
@@ -83,7 +83,7 @@ export default {
         :disabled="disabled || inProgress" 
         @click="clickAction">
             <slot name='inProgress' v-if="inProgress">
-                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">Original Slot</span>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
             </slot>
             {{value}}
         </button>
