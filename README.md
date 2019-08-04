@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/perdeepOsingh/bt-vue-button.svg?branch=master)](https://travis-ci.org/perdeepOsingh/bt-vue-button)
+
 # Installation
 ```shell
 npm i bt-vue-button --save
@@ -64,7 +66,7 @@ export default {
 `actionInProgress` event is emitted after btnFinalState visual representation process is completed.
 
 # How to use events and props in Parent
-- In parent component define 3 data values 
+- In parent component define 3 data values
 
 ```javascript
 data() {
@@ -79,9 +81,9 @@ data() {
 - In parent template section add btVueButton template
 
 ```html
-<btVueButton v-on:clicked="someAction()" 
-            :actionInProgress.sync="actionInProgress" 
-            :isDisabled="isDisabled" 
+<btVueButton v-on:clicked="someAction()"
+            :actionInProgress.sync="actionInProgress"
+            :isDisabled="isDisabled"
             :btnFinalState="finalState">
             <template #inProgress>
               <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
@@ -98,7 +100,7 @@ methods: {
 
             // some validation failure
             // setTimeout(()=>{
-            //     this.actionInProgress=false    
+            //     this.actionInProgress=false
             // }, 2000)
 
             // validation passed and some axios call made
@@ -107,7 +109,7 @@ methods: {
 
             // if success failed
             //this.finalState = 'failure'
-        
+
         }
     }
 ```
