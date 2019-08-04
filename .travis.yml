@@ -14,4 +14,4 @@ install:
 script:
   - npm run test
 after_script:
-  - cat ./coverage/lcov.info | npx coveralls
+  - npm run coveralls

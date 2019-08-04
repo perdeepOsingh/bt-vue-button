@@ -27,7 +27,8 @@
     "vue-jest": "^3.0.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | npx coveralls"
   },
   "jest": {
     "moduleFileExtensions": [
