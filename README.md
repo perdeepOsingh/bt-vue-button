@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/perdeepOsingh/bt-vue-button.svg?branch=master)](https://travis-ci.org/perdeepOsingh/bt-vue-button) [![Coverage Status](https://coveralls.io/repos/github/perdeepOsingh/bt-vue-button/badge.svg?branch=master)](https://coveralls.io/github/perdeepOsingh/bt-vue-button?branch=master)
+[![Build Status](https://travis-ci.org/perdeepOsingh/bt-vue-button.svg?branch=master)](https://travis-ci.org/perdeepOsingh/bt-vue-button) [![Coverage Status](https://coveralls.io/repos/github/perdeepOsingh/bt-vue-button/badge.svg?branch=master)](https://coveralls.io/github/perdeepOsingh/bt-vue-button?branch=master) [![Known Vulnerabilities](https://snyk.io//test/github/perdeepOsingh/bt-vue-button/badge.svg?targetFile=package.json)](https://snyk.io//test/github/perdeepOsingh/bt-vue-button?targetFile=package.json)
 
 # Installation
 ```shell
