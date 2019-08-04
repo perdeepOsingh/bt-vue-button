@@ -7,7 +7,11 @@ cache:
     - node_modules
 env:
 - NODE_ENV=test
+before_install:
+- npm prune
+install:
+- npm install
 script:
   - npm run test
 after_script:
-  - npm run test --coverage --coverageReporters=coverage/text-lcov | coveralls
+  - cat ./coverage/lcov.info | npx coveralls
