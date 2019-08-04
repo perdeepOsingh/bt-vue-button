@@ -1,6 +1,6 @@
 {
   "name": "bt-vue-button",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "VueJS button plugin for bootstrap framework to show action in progress and avoid double click.",
   "main": "dist/bt-vue-button.umd.min.js",
   "files": [
