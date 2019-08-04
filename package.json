@@ -7,7 +7,6 @@
     "dist/*.js"
   ],
   "dependencies": {
-    "bootstrap": "^4.3.1",
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
@@ -44,7 +43,8 @@
       "**/*.{js,vue}",
       "!**/node_modules/**",
       "!**/vendor/**",
-      "!**/dist/**"
+      "!**/dist/**",
+      "!**/coverage/**"
     ]
   },
   "author": "Perdeep Singh",
