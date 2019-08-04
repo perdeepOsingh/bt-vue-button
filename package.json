@@ -7,19 +7,45 @@
     "dist/*.js"
   ],
   "dependencies": {
-    "bootstrap": "^4.3.1"
+    "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.5.5",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
     "eslint": "^6.1.0",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.2.3"
+    "eslint-plugin-vue": "^5.2.3",
+    "jest": "^24.8.0",
+    "vue": "^2.6.10",
+    "vue-jest": "^3.0.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/dist/**",
+      "!**/coverage/**"
+    ]
   },
   "author": "Perdeep Singh",
   "license": "ISC",
